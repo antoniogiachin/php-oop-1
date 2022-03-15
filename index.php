@@ -39,7 +39,8 @@
 
         //funzione per stampa cast
         public function printCast(){
-            echo ' <br>' .'Il cast si compone di:';
+            
+            echo 'Il cast si compone di:';
 
             echo "<ul>";
             //cicli array cast e stampi per ognuno il li con il nome
@@ -52,10 +53,17 @@
 
     }
 
-    $amici = new Movie ('amici', 1997, 'comico');
-    // $amici->cast =['tony', 'mario','ovidio'];
-    $amici-> setCast('gigi', 'paolo','perix');
-    echo $amici->printCast() ;
+    // inizializzo movie con construct
+    $amiciMiei = new Movie ('Amici Miei', 1975, 'commedia');
+    
+    // uso funzione per settare il cast
+    $amiciMiei-> setCast('Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi');
+
+    //stampo le informazioni
+    echo " <h2> Il film " . $amiciMiei->title . "</h2>";
+    echo "<p> E' uscito nel " . $amiciMiei->year .  " di genere: " . $amiciMiei->genre . "</p>";
+    // stampo il cast con funzione apposita
+    echo $amiciMiei->printCast() ;
     
 
 ?>
