@@ -39,6 +39,11 @@
 
         //funzione per stampa cast
         public function printCast(){
+
+            //array viene sottoposto a splice  se piu' lungo di 2 attori
+            if(count($this->cast) > 2){
+                array_splice($this->cast,2, count($this->cast), "...");
+            }
             echo 'Il cast si compone di:';
 
             echo "<ul>";
@@ -53,7 +58,7 @@
     }
 
     // inizializzo movie con construct
-    $amiciMiei = new Movie ('Amici Miei', 1975, 'commedia');
+    $amiciMiei = new Movie ('Amici Miei', 1975, 'Commedia');
     
     // uso funzione per settare il cast
     $amiciMiei-> setCast($cast,'Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi');
@@ -63,6 +68,20 @@
     echo "<p> E' uscito nel " . $amiciMiei->year .  " di genere: " . $amiciMiei->genre . "</p>";
     // stampo il cast con funzione apposita
     echo $amiciMiei->printCast() ;
+    // var_dump($amiciMiei->cast);
+
+    //secondo film
+    $scanners= new Movie ('Scanners', 1981, 'Horror, Sci-fi');
+
+    // setcast e stampa informazioni cast
+    $scanners-> setCast($cast,"Jennifer O'Neill", 'Stephen Lack','Patrick McGoohan');
+
+    //stampo le informazioni
+    echo " <h2> Il film " . $scanners->title . "</h2>";
+    echo "<p> E' uscito nel " . $scanners->year .  " di genere: " . $scanners->genre . "</p>";
+
+    // stampo il cast con funzione apposita
+    echo $scanners->printCast() ;
     
 
 ?>
