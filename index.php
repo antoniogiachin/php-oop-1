@@ -32,14 +32,13 @@
 
         // funzione per creazione array cast
         // operatore di rest
-        public function setCast(...$arr){
+        public function setCast($cast,...$arr){
             //ritorna che il cast di questa istanza e' uguale ad un array in cui pushi ogni argomento passato
             return $this->cast = $cast[]=$arr;
         }
 
         //funzione per stampa cast
         public function printCast(){
-            
             echo 'Il cast si compone di:';
 
             echo "<ul>";
@@ -57,7 +56,7 @@
     $amiciMiei = new Movie ('Amici Miei', 1975, 'commedia');
     
     // uso funzione per settare il cast
-    $amiciMiei-> setCast('Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi');
+    $amiciMiei-> setCast($cast,'Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi');
 
     //stampo le informazioni
     echo " <h2> Il film " . $amiciMiei->title . "</h2>";
