@@ -21,7 +21,14 @@
         public function __construct($title, $year, $genre)
         {
             $this->title = $title;
-            $this->year = $year;
+
+            //controllo su anno
+            if(is_numeric($year)){
+                $this->year = $year;
+            } else{
+                $this->year = "<em> ' anno sconosciuto ' </em>";
+            }
+
             $this->genre = $genre;
         }
 
@@ -64,24 +71,26 @@
     $amiciMiei-> setCast($cast,'Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi');
 
     //stampo le informazioni
-    echo " <h2> Il film " . $amiciMiei->title . "</h2>";
-    echo "<p> E' uscito nel " . $amiciMiei->year .  " di genere: " . $amiciMiei->genre . "</p>";
+    echo " <h2> Il film '" . $amiciMiei->title . "'</h2>";
+    echo "<p> E' uscito nel " . $amiciMiei->year .  " di genere: '" . $amiciMiei->genre . "'</p>";
     // stampo il cast con funzione apposita
     echo $amiciMiei->printCast() ;
     // var_dump($amiciMiei->cast);
 
     //secondo film
-    $scanners= new Movie ('Scanners', 1981, 'Horror, Sci-fi');
+    $scanners= new Movie ('Scanners', '', 'Horror, Sci-fi');
 
     // setcast e stampa informazioni cast
     $scanners-> setCast($cast,"Jennifer O'Neill", 'Stephen Lack','Patrick McGoohan');
 
     //stampo le informazioni
-    echo " <h2> Il film " . $scanners->title . "</h2>";
-    echo "<p> E' uscito nel " . $scanners->year .  " di genere: " . $scanners->genre . "</p>";
+    echo " <h2> Il film '" . $scanners->title . "'</h2>";
+    echo "<p> E' uscito nel " . $scanners->year .  " di genere: '" . $scanners->genre . "'</p>";
 
     // stampo il cast con funzione apposita
     echo $scanners->printCast() ;
+
+    
     
 
 ?>
