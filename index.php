@@ -14,7 +14,7 @@
         public $title;
         public $year;
         public $genre;
-        public $Lang;
+        public $lang;
         public $cast;
 
         // funzione di construct
@@ -39,9 +39,9 @@
 
         // funzione per creazione array cast
         // operatore di rest
-        public function setCast($cast,...$arr){
+        public function setCast(...$arr){
             //ritorna che il cast di questa istanza e' uguale ad un array in cui pushi ogni argomento passato
-            return $this->cast = $cast[]=$arr;
+            return $this->cast = $arr;
         }
 
         //funzione per stampa cast
@@ -68,7 +68,7 @@
     $amiciMiei = new Movie ('Amici Miei', 1975, 'Commedia');
     
     // uso funzione per settare il cast
-    $amiciMiei-> setCast($cast,'Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi');
+    $amiciMiei-> setCast('Pietro Germi', 'Leonardo Benvenuti','Piero De Bernardi', 'Antonio Giachin');
 
     //stampo le informazioni
     echo " <h2> Il film '" . $amiciMiei->title . "'</h2>";
@@ -81,7 +81,7 @@
     $scanners= new Movie ('Scanners', '', 'Horror, Sci-fi');
 
     // setcast e stampa informazioni cast
-    $scanners-> setCast($cast,"Jennifer O'Neill", 'Stephen Lack','Patrick McGoohan');
+    $scanners-> setCast("Jennifer O'Neill", 'Stephen Lack','Patrick McGoohan');
 
     //stampo le informazioni
     echo " <h2> Il film '" . $scanners->title . "'</h2>";
